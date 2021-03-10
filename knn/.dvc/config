@@ -1,0 +1,6 @@
+[core]
+    remote = remote
+['remote "remote"']
+    listobjects = true
+    url = s3://studia/renttherunway-knn
+    endpointurl = http://wieszcze.ml:9001/

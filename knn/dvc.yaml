@@ -1,0 +1,23 @@
+stages:
+  knn:
+    deps:
+      - data/dataset_split
+    outs:
+      - data/predictions
+    cmd: python3 knn.py
+    wdir: . 
+  select_top:
+    deps:
+      - data/predictions
+    outs:
+      - data/top_n
+    cmd: python3 top.py
+    wdir: . 
+  baseline:
+    deps:
+      - data/dataset_split
+    outs:
+      - data/baseline.json
+    cmd: python3 baseline.py
+    wdir: . 
+

@@ -1,0 +1,12 @@
+md5: 0a35801c70cdfb06e430e47a9bbb6da1
+frozen: true
+deps:
+- path: data/dataset_split
+  repo:
+    url: git@gitlab.com:wieszcze/studia/renttherunway-dataset.git
+    rev_lock: 2a9d23bcf1287dd1801db96b46631973da4cb1fe
+outs:
+- md5: 61e643db96391d9d8af83c672f81d264.dir
+  size: 20998795
+  nfiles: 2
+  path: dataset_split

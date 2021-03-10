@@ -1,0 +1,37 @@
+schema: '2.0'
+stages:
+  knn:
+    cmd: python3 knn.py
+    deps:
+    - path: data/dataset_split
+      md5: 61e643db96391d9d8af83c672f81d264.dir
+      size: 20998795
+      nfiles: 2
+    outs:
+    - path: data/predictions
+      md5: 7be22d64a26f73a5671db704ecff5b53.dir
+      size: 2464327004
+      nfiles: 3
+  select_top:
+    cmd: python3 top.py
+    deps:
+    - path: data/predictions
+      md5: 7be22d64a26f73a5671db704ecff5b53.dir
+      size: 2464327004
+      nfiles: 3
+    outs:
+    - path: data/top_n
+      md5: ee4aebe0f7e5ca8c9f112dd65c217e49.dir
+      size: 30491836
+      nfiles: 3
+  baseline:
+    cmd: python3 baseline.py
+    deps:
+    - path: data/dataset_split
+      md5: 61e643db96391d9d8af83c672f81d264.dir
+      size: 20998795
+      nfiles: 2
+    outs:
+    - path: data/baseline.json
+      md5: 531049b23d8d2900336e385468bfae9a
+      size: 9307408
